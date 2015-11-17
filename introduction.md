@@ -32,7 +32,7 @@ cd hello
 
 The project is created with few files which makes it easy to handle.
 
-[![Attribute error](http://www.synbioz.com/images/articles/20151028/arbo_thumb_450.png)](http://www.synbioz.com/images/articles/20151028/arbo.png)
+[![motion-game tree](http://www.synbioz.com/images/articles/20151028/arbo_thumb_450.png)](http://www.synbioz.com/images/articles/20151028/arbo.png)
 
 In this introduction we will have a look at the `app` folder in which we will develop a minimalistic game.
 
@@ -67,7 +67,7 @@ rake android:emulator
 
 Once started you should see "Hello World" appearing.
 
-[![Erreur d'attribut](http://www.synbioz.com/images/articles/20151028/hw1_thumb_450.png)](http://www.synbioz.com/images/articles/20151028/hw1.jpg)
+[![iPhone emulator with Hello World](http://www.synbioz.com/images/articles/20151028/hw1_thumb_450.png)](http://www.synbioz.com/images/articles/20151028/hw1.jpg)
 
 As you can see, it is very easy to create an iOS and Android game with one code only! We can carry on by applying other methods on our label.
 
@@ -86,7 +86,7 @@ As you can see, it is very easy to create an iOS and Android game with one code 
 
 The `position` method allows us to move the label relatively to its center. Then we change the color and apply a rotation.
 
-[![Erreur d'attribut](http://www.synbioz.com/images/articles/20151028/hw2_thumb_450.png)](http://www.synbioz.com/images/articles/20151028/hw2.jpg)
+[![Hello world after changes](http://www.synbioz.com/images/articles/20151028/hw2_thumb_450.png)](http://www.synbioz.com/images/articles/20151028/hw2.jpg)
 
 
 ## Synbioz vs Zombie
@@ -175,7 +175,7 @@ end
 
 We added a button for each member of Synbioz. Once selected, we have to replace the current scene by the main one with `MG::Director.shared.replace()` where the scene takes the `name` as a parameter. You should see that :
 
-[![Erreur d'attribut](http://www.synbioz.com/images/articles/20151028/svz1_thumb_450.png)](http://www.synbioz.com/images/articles/20151028/svz1.jpg)
+[![Choose screen with button list](http://www.synbioz.com/images/articles/20151028/svz1_thumb_450.png)](http://www.synbioz.com/images/articles/20151028/svz1.jpg)
 
 ### Main scene, the real fun begins!
 
@@ -236,7 +236,7 @@ This song is played at launch. In order to loop it, you need to set the `play` s
 
 Once your choice is made you are redirected to the main scene.
 
-[![Erreur d'attribut](http://www.synbioz.com/images/articles/20151028/svz2_thumb_450.png)](http://www.synbioz.com/images/articles/20151028/svz2.jpg)
+[![Main scene with Martin and the Zombie](http://www.synbioz.com/images/articles/20151028/svz2_thumb_450.png)](http://www.synbioz.com/images/articles/20151028/svz2.jpg)
 
 
 ### Physical objects
@@ -263,7 +263,7 @@ We want to launch the game over scene when our characters are in contact. First 
   end
 ~~~
 
-[![Erreur d'attribut](http://www.synbioz.com/images/articles/20151028/svz3_thumb_450.png)](http://www.synbioz.com/images/articles/20151028/svz3.jpg)
+[![Nicolas runs through the zombie](http://www.synbioz.com/images/articles/20151028/svz3_thumb_450.png)](http://www.synbioz.com/images/articles/20151028/svz3.jpg)
 
 For the moment our survivor runs through the zombie, both behave as images. We want physical contact between images to be possible.
 
@@ -292,7 +292,7 @@ For the moment our survivor runs through the zombie, both behave as images. We w
 
 Click on the image below to see the animation.
 
-[![Erreur d'attribut](http://www.synbioz.com/images/articles/20151028/svz4_thumb_450.png)](http://www.synbioz.com/images/articles/20151028/svz4.gif)
+[![Animation of the collision between Victor and the Zombie](http://www.synbioz.com/images/articles/20151028/svz4_thumb_450.png)](http://www.synbioz.com/images/articles/20151028/svz4.gif)
 
 Now we have a collision between the survivor and zombie ! We also note that our characters are experiencing gravity which is very interesting for a 2D Mario like game for example. 
 
@@ -529,9 +529,9 @@ end
 ~~~
 
 
-[![Erreur d'attribut](http://www.synbioz.com/images/articles/20151028/svz5_thumb_450.png)](http://www.synbioz.com/images/articles/20151028/svz5.jpg)
+[![The Zombie move to Jon](http://www.synbioz.com/images/articles/20151028/svz5_thumb_450.png)](http://www.synbioz.com/images/articles/20151028/svz5.jpg)
 
-[![Erreur d'attribut](http://www.synbioz.com/images/articles/20151028/svz6_thumb_450.png)](http://www.synbioz.com/images/articles/20151028/svz6.jpg)
+[![Game over scene with survived time](http://www.synbioz.com/images/articles/20151028/svz6_thumb_450.png)](http://www.synbioz.com/images/articles/20151028/svz6.jpg)
 
 ## Conclusion
 
