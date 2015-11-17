@@ -11,19 +11,19 @@ publish_on: ...
 ---
 
 
-Rubymotion introduced last september a 2D game development platform for smartphones (iOS and Android) called Motiongame. Until now creating games was done with the gem Joybox. Now Rubymotion includes a beta version of Motiongame which will be maintained up to date, easy to set up and cross-plateform! 
+RubyMotion introduced last september a 2D game development platform for iOS and Android called motion-game. Until now creating games was done using Joybox gem. From now on RubyMotion includes a beta version of motion-game which will be maintained up to date, easy to set up and cross-plateform! 
 
-In this article we will discover Motiongame and I'm pretty sure that will make you want to develop smartphone games!
+In this article we will discover motion-game and I'm pretty sure that you'll want to try it to build smartphone games!
 
 ## Hello world
 
-First of all you need to install Motiongame.
+First of all you need to install motion-game.
 
 ~~~bash
 gem install motion-game
 ~~~
 
-As you can see it is very simple. Now we can create our first hello world game.
+As you can see it is really easy. Now we can create our first hello world game.
 
 ~~~bash
 motion create --template=motion-game hello
@@ -32,9 +32,9 @@ cd hello
 
 The project is created with few files which makes it easy to handle.
 
-[![Erreur d'attribut](http://www.synbioz.com/images/articles/20151028/arbo_thumb_450.png)](http://www.synbioz.com/images/articles/20151028/arbo.png)
+[![Attribute error](http://www.synbioz.com/images/articles/20151028/arbo_thumb_450.png)](http://www.synbioz.com/images/articles/20151028/arbo.png)
 
-In this introduction we will look at the `app` folder in which we will develop a minimalistic game.
+In this introduction we will have a look at the `app` folder in which we will develop a minimalistic game.
 
 **app/application.rb**
 
@@ -58,7 +58,7 @@ class MainScene < MG::Scene
 end
 ~~~
 
-By default, all files in `app` are loaded by Motiongame. The entry point and the scene where the game takes place are named `application.rb` and` main_scene.rb` respectively. The application file launches the main scene (a simple "Hello World") with some basic specifics like the font style and the anchor point. Now we can simulate our game on iOS and Android !
+By default, all files in `app` are loaded by RubyMotion. The entry point and the scene where the game takes place are named `application.rb` and` main_scene.rb` respectively. The application file launches the main scene (a simple "Hello World") with some basic things like the font style and the anchor point. Now we can simulate our game on iOS and Android!
 
 ~~~bash
 rake ios:simulator
@@ -69,7 +69,7 @@ Once started you should see "Hello World" appearing.
 
 [![Erreur d'attribut](http://www.synbioz.com/images/articles/20151028/hw1_thumb_450.png)](http://www.synbioz.com/images/articles/20151028/hw1.jpg)
 
-As you can see, it is very easy to create an iOS and Android game with a single code! We can continue by applying other methods on our label.
+As you can see, it is very easy to create an iOS and Android game with one code only! We can carry on by applying other methods on our label.
 
 **app/main_scene.rb**
 
@@ -84,38 +84,41 @@ As you can see, it is very easy to create an iOS and Android game with a single 
   end
 ~~~
 
-The position allows us to move your label relatively to its center. Then we change the color and apply a rotation on it.
+The `position` method allows us to move the label relatively to its center. Then we change the color and apply a rotation.
 
 [![Erreur d'attribut](http://www.synbioz.com/images/articles/20151028/hw2_thumb_450.png)](http://www.synbioz.com/images/articles/20151028/hw2.jpg)
 
 
 ## Synbioz vs Zombie
 
-We continue with a mini game which is a pretext to explore features. There is already an example of [Flappy Bird proposed by the team of RubyMotion](https://github.com/HipByte/RubyMotionSamples/tree/master/game/FlappyBird) that i prompt you to download. This mini game is less elaborate but will allow us to learn interesting methods.
+We go on with creating a mini game which is a pretext to explore features. There already is an example of [Flappy Bird provided by the RubyMotion team](https://github.com/HipByte/RubyMotionSamples/tree/master/game/FlappyBird) that you really should download.
+
+Our mini game is less elaborated but will allow to discover interesting methods.
 
 ### The game
 
-The aim of "Synbioz vs Zombie" is simple. You play as a survivor of a team which should dodge the zombie as long as possible. Before you start you will need to [retrieve images and audio resources on github](https://github.com/synbioz/introduction_motiongame).
+The aim of "Synbioz vs Zombie" is simple. You play a survivor of a team which should dodge the zombie as long as possible. Before you start you will need to [retrieve images and audio resources on github](https://github.com/synbioz/introduction_motiongame).
 
 ### First step
 
-To make our game we need the following three scenes :
-  - Survivor choice (survivor_scene.rb)
-  - Main (main_scene.rb)
-  - Game over (game_over_scene.rb)
+To create our game we will need the following scenes:
+  
+- Survivor choice (survivor_scene.rb)
+- Main (main_scene.rb)
+- Game over (game_over_scene.rb)
 
-It's time to create our game !
+It's time to create our skeleton!
 
 ~~~bash
 motion create --template=motion-game synbiozvszombie
 cd synbiozvszombie
 ~~~
 
-In the `app` folder we add `scenes` subfolder that will include the three scenes. You have to remove `main_scene.rb` to the `app` root to prevent conflicts.
+In the `app` folder we'll add `scenes` subfolder that will include the three scenes. You'll have to remove `main_scene.rb` from the `app` root to prevent conflicts.
 
 ### Choose your survivor
 
-The first scene will allow us to select the synbioz team survivor that you want to embody.
+The first scene will allow us to select the Synbioz team survivor that you want to embody.
 
 **app/application.rb**
 
@@ -134,7 +137,6 @@ Now the game begins on the survivor scene.
 ~~~ruby
 class SurvivorScene < MG::Scene
   def initialize
-
     add_label
   end
 
@@ -148,9 +150,9 @@ class SurvivorScene < MG::Scene
 end
 ~~~
 
-On the first scene, we add a text label. Under this label we will have the opportunity to choose the survivor.
+In the first scene, we add a text label. Under this label we will have the opportunity to choose the survivor.
 
-`MG::Director.shared.size.width` allows us to get the screen width. Once halved, the text will be centered on `x`. To finish we add 100px on the top of the screen to improve the rendering.
+`MG::Director.shared.size.width` allows us to get the screen width. Once halved, the text will be centered on `x`. Finally we add 100px on the top of the screen to improve the rendering.
 
 Now we add our survivor list :
 
@@ -161,7 +163,6 @@ def add_survivors
   team_synbioz = ["Martin", "Nico", "Victor", "Jon", "Numa", "Clement", "Theo", "Cedric"]
 
   team_synbioz.each_with_index do |name, index|
-
     button = MG::Button.new("#{name}")
     button.font_size = 35
     button.position = [MG::Director.shared.size.width / 2, (MG::Director.shared.size.height - 200) - (index * 50)]
@@ -172,17 +173,17 @@ def add_survivors
 end
 ~~~
 
-We add a button for each member of Synbioz. Once selected, we replace the current scene by the main with `MG::Director.shared.replace()` where the scene takes place with the `name` as a parameter. You should see that :
+We added a button for each member of Synbioz. Once selected, we have to replace the current scene by the main one with `MG::Director.shared.replace()` where the scene takes the `name` as a parameter. You should see that :
 
 [![Erreur d'attribut](http://www.synbioz.com/images/articles/20151028/svz1_thumb_450.png)](http://www.synbioz.com/images/articles/20151028/svz1.jpg)
 
-### Main scene, the real fun begins !
+### Main scene, the real fun begins!
 
-The main scene will include two elements, a survivor and a zombie. The latter will move randomly on the screen and you must specify the movement of the survivor.
+The main scene will include two elements, a survivor and a zombie. The latter will move randomly on the screen and you'll have to move the survivor by yourself.
 
 ### Resources
 
-To continue, we need resources. By default, Motiongame find the resources in the folder with the same name at the project root. So just create this folder and add the downloaded resources. 
+We then need resources. By default, motion-game find the resources in the folder with the same name in the project root. So you just have to create this folder and add the downloaded resources. 
 
 **app/scenes/main_scene.rb**
 
@@ -199,7 +200,7 @@ To continue, we need resources. By default, Motiongame find the resources in the
   end
 ~~~
 
-Right now `MG::Sprite.new("image")` gets images on which can be applied some methods. It's just as easy to trigger a song from this folder `MG::Audio.play("song")`.
+Right now `MG::Sprite.new("image")` gets images on which we can apply some methods. It's just as easy to play a sound from this folder `MG::Audio.play("song")`.
 
 **app/scenes/main_scene.rb**
 
@@ -212,7 +213,7 @@ Right now `MG::Sprite.new("image")` gets images on which can be applied some met
   end
 ~~~
 
-This song is played at launch. In order to play it in loop, you need to set the second argument of the play function to `true`. Finally `0.5` is the volume. Next, we import the survivor image stored in the folder `resources/survivors`. We get the name into the instance variable `@name` which is useful to display dynamically the survivor image.
+This song is played at launch. In order to loop it, you need to set the `play` second argument to `true`. Finally `0.5` is the volume. Next, we import the survivor image stored in the folder `resources/survivors`. We save the name into the `@name` instance variable which is useful to display the survivor image dynamically.
 
 **app/scenes/main_scene.rb**
 
@@ -233,14 +234,14 @@ This song is played at launch. In order to play it in loop, you need to set the 
   end
 ~~~
 
-Once your choice is made you arrive on the main scene.
+Once your choice is made you are redirected to the main scene.
 
 [![Erreur d'attribut](http://www.synbioz.com/images/articles/20151028/svz2_thumb_450.png)](http://www.synbioz.com/images/articles/20151028/svz2.jpg)
 
 
 ### Physical objects
 
-We want to launch the game over scene when our characters are in contact. For that, we will first move our survivor to the zombie to observe the default behavior.
+We want to launch the game over scene when our characters are in contact. First we will move our survivor to the zombie to see what happens.
 
 **app/scenes/main_scene.rb**
 
@@ -264,7 +265,7 @@ We want to launch the game over scene when our characters are in contact. For th
 
 [![Erreur d'attribut](http://www.synbioz.com/images/articles/20151028/svz3_thumb_450.png)](http://www.synbioz.com/images/articles/20151028/svz3.jpg)
 
-For the moment our survivor runs through the zombie, both behave as images. We wish that physical contact between images becomes possible.
+For the moment our survivor runs through the zombie, both behave as images. We want physical contact between images to be possible.
 
 **app/scenes/main_scene.rb**
 
@@ -293,7 +294,7 @@ Click on the image below to see the animation.
 
 [![Erreur d'attribut](http://www.synbioz.com/images/articles/20151028/svz4_thumb_450.png)](http://www.synbioz.com/images/articles/20151028/svz4.gif)
 
-Now we have a contact between the survivor and zombie ! We also note that our characters are experiencing gravity which is very interesting in a 2D Mario for example. 
+Now we have a collision between the survivor and zombie ! We also note that our characters are experiencing gravity which is very interesting for a 2D Mario like game for example. 
 
 Our mini game is closer to a Pacman, so we will remove this feature.
 
@@ -373,7 +374,7 @@ Now when our survivor touches the zombie, the `on_contact_begin` block is called
 
 ### The movements
 
-Now we want to move the characters. Survivor will move to the finger when you touch the screen and the zombie will move randomly within the limits of the screen.
+Now we want to move the characters. Survivor will move to the position touched on the screen and the zombie will move randomly within the limits of the screen.
 
 
 #### Events movements
@@ -406,7 +407,7 @@ The `on_touch_begin` block allows us to find the coordinates of our finger. This
 
 #### Random movements
 
-With the `update` method, Motiongame includes an easy-to-implement loop system. You just need to define the `update(delta)` method that you can easily switch with the `start_update` and `stop_update` methods.
+With the `update` method, motion-game includes an easy-to-implement loop system. You just need to define the `update(delta)` method that you can easily switch on and off with the `start_update` and `stop_update` methods.
 
 **app/scenes/main_scene.rb**
 
@@ -441,8 +442,7 @@ With the `update` method, Motiongame includes an easy-to-implement loop system. 
   end
 ~~~
 
-
-First we initialize `@zombie_update_position` to zero, then we start the loop with `start_update`. The `update` method as `delta` parameter that return the execution time of the loop. Thus, we can get the current time by incrementing with `delta`. We use this principle to move the zombie every two seconds. Then we specify some random coordinates that stay within the dimensions of the screen to manage the zombie movement.
+First we initialize `@zombie_update_position` to zero, then we start the loop with `start_update`. The `update` method has a `delta` parameter which is the execution time of the loop. Thus, we can get the current time by incrementing with `delta`. We use this principle to move the zombie every two seconds. Then we specify some random coordinates that stay within the dimensions of the screen to manage the zombie movement.
 
 ### Add some fun
 
@@ -501,7 +501,7 @@ def random_position
 end
 ~~~
 
-We use `@time` variable that we send to the game over scene. 
+We use `@time` variable to send the score to the game over scene. 
 
 **app/scenes/game_over_scene.rb**
 
@@ -535,7 +535,7 @@ end
 
 ## Conclusion
 
-In this introduction we had a general view of many Motiongame features. If you're interested, I would strongly advise you to [have a look at the documentation](http://www.rubymotion.com/developers/motion-game/) pending a future article where it will go into details !
+With this introduction we had an overview of many motion-game features. If you're interested in, I would strongly recommend that you [take a look at the documentation](http://www.rubymotion.com/developers/motion-game/). Some other article are to come and will go into more details!
 
 
 ---
